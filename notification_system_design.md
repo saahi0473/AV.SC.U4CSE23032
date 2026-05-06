@@ -49,5 +49,21 @@ The priority sort ensures that even as new notifications stream in, the top 10 w
 
 ---
 
-## Stage 2 – Frontend (React/Next)
-*(To be implemented)*
+## Stage 2: React/Next.js Frontend
+
+### Requirements Addressed
+1. **React Framework**: Migrated the vanilla HTML/JS application to Next.js 14+ (App Router).
+2. **Component Architecture**: 
+   - Created reusable `<NotificationCard />` component.
+   - Built dual-page structure: `/` (All Notifications) and `/priority` (Priority Inbox).
+3. **Material UI Integration**: Implemented a sleek Dark Theme exclusively using `@mui/material` and `@emotion`. Handled Next.js Server Components CSS hydration correctly using `<ThemeRegistry>`.
+4. **API Proxy**: Configured `next.config.mjs` with rewrites (`/api-proxy/`) to seamlessly bypass CORS errors when interacting with `http://20.207.122.201`.
+5. **Pagination & Filtering**: 
+   - "All Notifications" page passes dynamic `limit`, `page`, and `notification_type` to the backend.
+   - "Priority Inbox" limits display to Top 5/10/15/20 and sorts locally by Placement > Result > Event logic.
+6. **Logging Middleware Integration**: Adapted the `logging.js` logic directly inside `src/lib/logger.js` to avoid Turbopack strict ESM module resolution errors, ensuring extensive telemetry logging to the evaluation server.
+
+### Deliverables
+- The React application resides in `notification_app_fe_react/`.
+- Runs exclusively on `http://localhost:3000`.
+- A video demonstration recording (`recording.webp`) is committed to the repository showcasing desktop and mobile responsiveness.
