@@ -1,0 +1,272 @@
+/* ===== Reset & Base ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f0f2f5;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+header {
+  background: #1a73e8;
+  color: white;
+  padding: 20px 30px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+header .subtitle {
+  font-size: 0.95rem;
+  opacity: 0.85;
+  margin-top: 4px;
+}
+
+/* ===== Main Layout ===== */
+main {
+  max-width: 850px;
+  margin: 30px auto;
+  padding: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ===== Cards ===== */
+.send-section,
+.inbox-section {
+  background: white;
+  border-radius: 10px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.send-section h2,
+.inbox-section h2 {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+  color: #1a73e8;
+}
+
+/* ===== Form Row ===== */
+.form-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.form-row input[type="text"] {
+  flex: 1;
+  min-width: 200px;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-row input[type="text"]:focus {
+  border-color: #1a73e8;
+}
+
+.form-row select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+}
+
+.form-row button,
+#refresh-btn {
+  padding: 10px 20px;
+  background: #1a73e8;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-row button:hover,
+#refresh-btn:hover {
+  background: #1558b0;
+}
+
+/* ===== Status Message ===== */
+.status-msg {
+  margin-top: 10px;
+  font-size: 0.88rem;
+  min-height: 18px;
+}
+
+.status-msg.success {
+  color: #188038;
+}
+
+.status-msg.error {
+  color: #c5221f;
+}
+
+/* ===== Inbox Header ===== */
+.inbox-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.inbox-header h2 {
+  margin-bottom: 0;
+}
+
+.badge {
+  background: #1a73e8;
+  color: white;
+  border-radius: 12px;
+  padding: 2px 9px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.controls label {
+  font-size: 0.88rem;
+  color: #555;
+}
+
+.controls select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  background: white;
+  cursor: pointer;
+}
+
+#refresh-btn {
+  padding: 7px 14px;
+  font-size: 0.88rem;
+}
+
+/* ===== Notification Cards ===== */
+#notif-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.notif-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 14px 16px;
+  background: #fafafa;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  transition: background 0.15s;
+}
+
+.notif-card:hover {
+  background: #f1f5ff;
+}
+
+.notif-card.new {
+  border-left: 4px solid #1a73e8;
+  background: #eef4ff;
+}
+
+.notif-card.seen {
+  opacity: 0.75;
+}
+
+.notif-body {
+  flex: 1;
+}
+
+.notif-message {
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.notif-meta {
+  font-size: 0.8rem;
+  color: #777;
+}
+
+.notif-type-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  white-space: nowrap;
+}
+
+.type-Placement {
+  background: #e8f5e9;
+  color: #2e7d32;
+}
+
+.type-Event {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.type-Result {
+  background: #e3f2fd;
+  color: #1565c0;
+}
+
+/* ===== Empty / Error States ===== */
+.empty-msg {
+  color: #888;
+  font-size: 0.92rem;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  .inbox-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-row input[type="text"],
+  .form-row select,
+  .form-row button {
+    width: 100%;
+  }
+}

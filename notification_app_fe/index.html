@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Campus Notification App</title>
+  <meta name="description" content="Campus notification platform for students - receive updates on Placements, Events, and Results." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>📢 Campus Notifications</h1>
+    <p class="subtitle">Stay updated with Placements, Events &amp; Results</p>
+  </header>
+
+  <main>
+
+    <!-- Send Notification Section -->
+    <section class="send-section">
+      <h2>Send a Notification</h2>
+      <div class="form-row">
+        <input
+          type="text"
+          id="notif-input"
+          placeholder="Enter notification message..."
+          autocomplete="off"
+        />
+        <select id="notif-type">
+          <option value="Placement">Placement</option>
+          <option value="Event">Event</option>
+          <option value="Result">Result</option>
+        </select>
+        <button id="send-btn" onclick="handleSend()">Send</button>
+      </div>
+      <p id="status-msg" class="status-msg"></p>
+    </section>
+
+    <!-- Priority Inbox Section -->
+    <section class="inbox-section">
+      <div class="inbox-header">
+        <h2>Priority Inbox <span id="notif-count" class="badge">0</span></h2>
+        <div class="controls">
+          <label for="top-n">Show top:</label>
+          <select id="top-n" onchange="renderNotifications()">
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+          <label for="filter-type">Filter:</label>
+          <select id="filter-type" onchange="renderNotifications()">
+            <option value="All">All</option>
+            <option value="Placement">Placement</option>
+            <option value="Event">Event</option>
+            <option value="Result">Result</option>
+          </select>
+          <button id="refresh-btn" onclick="fetchNotifications()">🔄 Refresh</button>
+        </div>
+      </div>
+
+      <div id="notif-list">
+        <p class="empty-msg">Loading notifications...</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Script loaded as module so we can use import -->
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
