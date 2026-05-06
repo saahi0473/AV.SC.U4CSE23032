@@ -34,7 +34,18 @@ The priority sort ensures that even as new notifications stream in, the top 10 w
 - `notification_app_fe/app.js` → `sortByPriority()` and `renderNotifications()`
 
 ### Screenshots
-*(Screenshots to be added after running the app)*
+
+**1. Initial Load — Priority Inbox with notifications from API**
+![Initial Load](notification_app_fe/screenshots/01_initial_load.png)
+
+**2. Sending a Placement notification**
+![Send Notification](notification_app_fe/screenshots/02_notification_sent.png)
+
+**3. Filtered view — Placement only**
+![Filter Placement](notification_app_fe/screenshots/03_filter_placement.png)
+
+**4. Refreshed view — Top 15, Placement filter**
+![Refresh Top 15](notification_app_fe/screenshots/04_refresh_top15.png)
 
 ---
 
